@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "checkout-rct": "apps/checkout-rct",
+    "checkout-rct-e2e": "apps/checkout-rct-e2e"
+  }
+}
