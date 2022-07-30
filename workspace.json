@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "checkout-rct": "apps/checkout-rct",
-    "checkout-rct-e2e": "apps/checkout-rct-e2e"
+    "checkout-rct-e2e": "apps/checkout-rct-e2e",
+    "ui": "libs/ui"
   }
 }
