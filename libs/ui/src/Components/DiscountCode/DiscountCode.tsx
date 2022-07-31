@@ -17,7 +17,7 @@ export function DiscountCode(props: DiscountCodeProps) {
     }
   };
   return (
-    <div className="shadow-container w-full bg-white p-3 mb-4">
+    <div className="shadow-container w-full rounded-[4px] bg-white p-3 mb-4">
       <div
         className="flex cursor-pointer justify-between items-center"
         onClick={() => setShow(!show)}

@@ -10,7 +10,7 @@ export function CartItems(props: CartItemsProps) {
   const sliderRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   return (
-    <div className="shadow-container w-full bg-white p-3 mb-4">
+    <div className="shadow-container w-full bg-white rounded-[4px] p-3 mb-4">
       <div
         className="flex cursor-pointer justify-between items-center"
         onClick={() => setShow(!show)}

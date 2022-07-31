@@ -9,7 +9,7 @@ export interface BillingSummaryProps {}
 export function BillingSummary(props: BillingSummaryProps) {
   const [show, setShow] = useState<boolean>(false);
   return (
-    <div className="shadow-container w-full bg-white p-3 mb-4">
+    <div className="shadow-container rounded-[4px] w-full bg-white p-3 mb-4">
       <div
         className="flex cursor-pointer justify-between items-center"
         onClick={() => setShow(!show)}
