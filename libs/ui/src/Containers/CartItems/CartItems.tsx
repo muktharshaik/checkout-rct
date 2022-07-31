@@ -10,9 +10,9 @@ export function CartItems(props: CartItemsProps) {
   const sliderRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   return (
-    <div className="shadow-container w-full bg-white p-2">
+    <div className="shadow-container w-full bg-white p-3 mb-4">
       <div
-        className="flex justify-between items-center"
+        className="flex cursor-pointer justify-between items-center"
         onClick={() => setShow(!show)}
       >
         <div>
@@ -30,7 +30,7 @@ export function CartItems(props: CartItemsProps) {
             animate={{
               rotate: show ? 180 : 0,
             }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <path
               d="M5.26799 6.07909C4.86821 6.55848 4.13179 6.55848 3.73201 6.0791L0.238902 1.89046C-0.304217 1.2392 0.158881 0.249999 1.00689 0.249999L7.99311 0.25C8.84112 0.25 9.30422 1.2392 8.7611 1.89046L5.26799 6.07909Z"
@@ -42,14 +42,13 @@ export function CartItems(props: CartItemsProps) {
       <motion.div
         initial={{
           opacity: 0,
+          display: 'none',
         }}
         animate={{
           opacity: show ? 1 : 0,
-          y: show ? 1 : 0,
+          display: show ? 'block' : 'none',
         }}
-        transition={{
-          duration: 1,
-        }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
         ref={sliderRef}
       >
         {cartItemsData.map((item, i) => {
