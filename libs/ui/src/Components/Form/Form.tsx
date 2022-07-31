@@ -14,6 +14,12 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   register?: any;
 }
 
+export interface TextAreaProps
+  extends React.HTMLAttributes<HTMLTextAreaElement> {
+  label?: string;
+  className?: any;
+}
+
 export function Form({ children, ...rest }: FormProps) {
   return <form>{children}</form>;
 }
@@ -43,6 +49,27 @@ const Input = ({ valid, type, label, className, ...rest }: InputProps) => {
   );
 };
 
+const Textarea = ({ className, ...rest }: TextAreaProps) => {
+  return (
+    <div className="relative w-full">
+      <label
+        className="absolute text-label -top-3 left-1 text-base mx-2 px-2 bg-white"
+        htmlFor=""
+      >
+        Order Comment
+      </label>
+      <textarea
+        name="comment"
+        placeholder="Type Here..."
+        id="comment"
+        rows={30}
+        className={className}
+      ></textarea>
+    </div>
+  );
+};
+
 Form.Input = Input;
+Form.TextArea = Textarea;
 
 export default Form;
