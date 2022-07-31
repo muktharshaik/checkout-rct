@@ -1,5 +1,4 @@
-import { Button, CartItems } from '@ui';
-import styles from './index.module.css';
+import { Content, Logo } from '@ui';
 
 export function Index() {
   /*
@@ -9,9 +8,8 @@ export function Index() {
    */
   return (
     <div className='border border-black mx-40 mt-20'>
-      <p className='text-red-500'>Hello</p>
-      <Button />
-      <CartItems />
+      <Logo />
+      <Content />
     </div>
   );
 }
