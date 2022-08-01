@@ -10,6 +10,7 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   label?: string;
   type: string;
   valid?: boolean;
+  divWidth?: string;
   className?: any;
   register?: any;
 }
@@ -28,9 +29,16 @@ export function Form({ children, ...rest }: FormProps) {
   return <form>{children}</form>;
 }
 
-const Input = ({ valid, type, label, className, ...rest }: InputProps) => {
+const Input = ({
+  valid,
+  type,
+  label,
+  className,
+  divWidth,
+  ...rest
+}: InputProps) => {
   return (
-    <div className="relative w-full">
+    <div className={`relative ${divWidth ? divWidth : 'w-full'}`}>
       {label && (
         <label
           className="absolute text-label -top-2 left-1 text-xs mx-2 px-2 bg-white"

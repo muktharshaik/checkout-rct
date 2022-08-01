@@ -48,6 +48,7 @@ export function BillingAddress({
             <div>
               <Form.Input
                 label="Password"
+                divWidth="w-[250px]"
                 type="password"
                 className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />
@@ -55,6 +56,7 @@ export function BillingAddress({
             <div>
               <Form.Input
                 label="Confirm Password"
+                divWidth="w-[250px]"
                 type="password"
                 className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />

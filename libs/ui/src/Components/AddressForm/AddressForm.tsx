@@ -16,13 +16,15 @@ export function AddressForm(props: AddressFormProps) {
         <div>
           <Form.Input
             label="First Name"
+            divWidth="w-[250px]"
             type="text"
-            className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
+            className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
           />
         </div>
         <div>
           <Form.Input
             label="Last Name"
+            divWidth="w-[250px]"
             type="text"
             className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
           />
@@ -69,6 +71,7 @@ export function AddressForm(props: AddressFormProps) {
         <div>
           <Form.Input
             label="City"
+            divWidth="w-[250px]"
             type="text"
             className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
           />
@@ -78,6 +81,7 @@ export function AddressForm(props: AddressFormProps) {
         <div>
           <Form.Input
             label="Zip/Postal Code"
+            divWidth="w-[250px]"
             type="text"
             className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
           />
@@ -85,6 +89,7 @@ export function AddressForm(props: AddressFormProps) {
         <div>
           <Form.Input
             label="Phone"
+            divWidth="w-[250px]"
             type="text"
             className={`border w-[250px] font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
           />
