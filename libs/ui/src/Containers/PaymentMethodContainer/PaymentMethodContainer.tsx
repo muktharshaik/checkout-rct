@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from 'react';
 import paypal from '../../../public/paypal.svg';
 import cCard from '../../../public/cards.svg';
-import { Form } from '@ui';
+import { Disclaimer, Form } from '@ui';
 
 /* eslint-disable-next-line */
 export interface PaymentMethodContainerProps {}
@@ -11,7 +12,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
   const [paypalChecked, setPaypalChecked] = useState<boolean>(true);
   const [isValid, setIsValid] = useState<boolean>(false);
 
-  function handleCheckInputChange(e) {
+  function handleCheckInputChange(e: any) {
     if (e.target.id == 'cc') {
       setCardChecked(true);
       setPaypalChecked(false);
@@ -20,9 +21,8 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
       setPaypalChecked(true);
     }
   }
-  function handleInputChange(e) {
+  function handleInputChange(e: any) {
     if (e.target.value.length === 16) {
-      console.log('HERE');
       setIsValid(true);
     }
   }
@@ -38,7 +38,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
             paypalChecked ? 'border-primary' : 'border-borderColor-dark'
           }`}
         >
-          <div className="flex border border-black justify-center items-center">
+          <div className="flex justify-center items-center">
             <input
               type="radio"
               name="shipping"
@@ -47,15 +47,15 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
               onChange={handleCheckInputChange}
             />
           </div>
-          <div className="flex w-11/12 border border-black justify-between items-center">
-            <p className="text-xl border border-black font-semibold">PayPal</p>
-            <div className="ml-4 border border-black text-textBase">
+          <div className="flex w-11/12 justify-between items-center">
+            <p className="text-xl font-semibold">PayPal</p>
+            <div className="ml-4 text-textBase">
               <p>
                 You will be redirected to the PayPal website after submitting
                 your order
               </p>
             </div>
-            <div className="border border-black h-[50px] w-[50px] flex justify-center items-center">
+            <div className="h-[50px] w-[50px] flex justify-center items-center">
               <img src={paypal} alt="potstfast" />
             </div>
           </div>
@@ -66,7 +66,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
             cardChecked ? 'border-primary' : 'border-borderColor-dark'
           }`}
         >
-          <div className="flex border z-10 border-black justify-center items-center">
+          <div className="flex z-10 justify-center items-center">
             <input
               type="radio"
               name="shipping"
@@ -75,29 +75,29 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
               onChange={handleCheckInputChange}
             />
           </div>
-          <div className="z-10 flex w-11/12 border border-black justify-between items-center">
-            <p className="z-10 text-xl border border-black font-semibold ">
-              Pay with Credit Card
-            </p>
-            <div className="border border-black h-[50px] flex justify-center items-center">
+          <div className="z-10 flex w-11/12 justify-between items-center">
+            <p className="z-10 text-xl font-semibold ">Pay with Credit Card</p>
+            <div className="h-[50px] flex justify-center items-center">
               <img src={cCard} alt="potstfast" />
             </div>
           </div>
-          <div className="z-10 flex flex-wrap justify-between border border-black mb-2">
+          <div className="z-10 flex flex-wrap justify-between mb-2">
             <div className="w-[230px] mt-3">
               <Form.Input
                 label="Card Number"
                 type="number"
                 valid={isValid}
+                //@ts-ignore
                 disabled={!cardChecked}
                 className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
                 onChange={handleInputChange}
               />
             </div>
-            <div className="w-[230px] mt-3">
+            <div className="w-[250px] mt-3">
               <Form.Input
                 label="Expiration Date"
-                type="number"
+                type="text"
+                //@ts-ignore
                 disabled={!cardChecked}
                 className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />
@@ -106,6 +106,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
               <Form.Input
                 label="Card Security Code"
                 type="password"
+                //@ts-ignore
                 disabled={!cardChecked}
                 className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />
@@ -117,6 +118,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
             </div>
           </div>
         </label>
+        <Disclaimer />
       </div>
     </div>
   );
