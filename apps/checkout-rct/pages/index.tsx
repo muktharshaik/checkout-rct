@@ -7,7 +7,7 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <div className='border border-black mx-40 mt-20'>
+    <div className="mx-40 mt-20">
       <Logo />
       <Content />
     </div>

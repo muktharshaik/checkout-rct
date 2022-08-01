@@ -6,4 +6,5 @@ export * from './BillingSummary';
 export * from './Form';
 export * from './Disclaimer';
 export * from './PaymentMethod';
-export * from './ShippingMethod'
+export * from './ShippingMethod';
+export * from './AddressForm'

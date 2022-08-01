@@ -1,11 +1,11 @@
-import { AddressContainer, CartContainer } from "@ui";
+import { AddressContainer, CartContainer } from '@ui';
 
 /* eslint-disable-next-line */
 export interface ContentProps {}
 
 export function Content(props: ContentProps) {
   return (
-    <div className='border border-black flex justify-between items-start'>
+    <div className="flex justify-between items-start">
       <AddressContainer />
       <CartContainer />
     </div>

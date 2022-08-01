@@ -19,6 +19,10 @@ export interface TextAreaProps
   label?: string;
   className?: any;
 }
+export interface SelectProps extends React.HTMLAttributes<HTMLSelectElement> {
+  label?: string;
+  className?: any;
+}
 
 export function Form({ children, ...rest }: FormProps) {
   return <form>{children}</form>;
