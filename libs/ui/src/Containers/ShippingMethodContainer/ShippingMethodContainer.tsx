@@ -25,7 +25,9 @@ export function ShippingMethodContainer(props: ShippingMethodContainerProps) {
         <label
           id="post"
           className={`select-none flex justify-between text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
-            postChecked ? 'border-primary' : 'border-borderColor-dark'
+            postChecked
+              ? 'border-primary bg-[#1660CF]/10'
+              : 'border-borderColor-dark'
           }`}
         >
           <div className="flex justify-center items-center">
@@ -39,7 +41,7 @@ export function ShippingMethodContainer(props: ShippingMethodContainerProps) {
           </div>
           <div className="flex w-11/12 justify-start items-center">
             <p className="text-xl ml-2 font-semibold">$2.99</p>
-            <div className="ml-4 text-textBase">
+            <div className="ml-6 text-textBase">
               <p>
                 USPS 1st Class With Tracking <br />
                 (5 - 13 days) COVID19 Delay
@@ -53,7 +55,9 @@ export function ShippingMethodContainer(props: ShippingMethodContainerProps) {
         <label
           id="postFast"
           className={`select-none flex justify-between text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
-            postFastChecked ? 'border-primary' : 'border-borderColor-dark'
+            postFastChecked
+              ? 'border-primary bg-[#1660CF]/10'
+              : 'border-borderColor-dark'
           }`}
         >
           <div className="flex justify-center items-center">
@@ -67,7 +71,7 @@ export function ShippingMethodContainer(props: ShippingMethodContainerProps) {
           </div>
           <div className="flex w-11/12 justify-start items-center">
             <p className="text-xl ml-2 font-semibold">$9.00</p>
-            <div className="ml-4 text-textBase">
+            <div className="ml-6 text-textBase">
               <p>
                 USPS PRIORITY With Tracking <br />
                 (5 - 13 days) COVID19 Delay

@@ -24,6 +24,8 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
   function handleInputChange(e: any) {
     if (e.target.value.length === 16) {
       setIsValid(true);
+    } else {
+      setIsValid(false);
     }
   }
   return (
@@ -34,8 +36,10 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
       <div className="flex flex-col justify-start">
         <label
           id="shippingContainer"
-          className={`select-none flex justify-between text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
-            paypalChecked ? 'border-primary' : 'border-borderColor-dark'
+          className={`select-none flex justify-start text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
+            paypalChecked
+              ? 'border-primary bg-[#1660CF]/10'
+              : 'border-borderColor-dark'
           }`}
         >
           <div className="flex justify-center items-center">
@@ -47,23 +51,25 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
               onChange={handleCheckInputChange}
             />
           </div>
-          <div className="flex w-11/12 justify-between items-center">
+          <div className="ml-2 flex w-11/12 justify-between items-center">
             <p className="text-xl font-semibold">PayPal</p>
-            <div className="ml-4 text-textBase">
+            <div className="ml-6 w-[330px] text-textBase">
               <p>
                 You will be redirected to the PayPal website after submitting
                 your order
               </p>
             </div>
-            <div className="h-[50px] w-[50px] flex justify-center items-center">
+            <div className="h-[50px] -mr-5 w-[50px] flex justify-center items-center">
               <img src={paypal} alt="potstfast" />
             </div>
           </div>
         </label>
         <label
           id="shippingContainer"
-          className={`select-none z-0 flex flex-wrap justify-between text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
-            cardChecked ? 'border-primary' : 'border-borderColor-dark'
+          className={`select-none z-0 flex flex-wrap justify-start text-base cursor-pointer mb-3 px-4 mr-2 rounded-[4px] border ${
+            cardChecked
+              ? 'border-primary bg-[#1660CF]/10'
+              : 'border-borderColor-dark'
           }`}
         >
           <div className="flex z-10 justify-center items-center">
@@ -75,9 +81,9 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
               onChange={handleCheckInputChange}
             />
           </div>
-          <div className="z-10 flex w-11/12 justify-between items-center">
+          <div className="ml-2 z-10 flex w-11/12 justify-between items-center">
             <p className="z-10 text-xl font-semibold ">Pay with Credit Card</p>
-            <div className="h-[50px] flex justify-center items-center">
+            <div className="h-[50px] -mr-5 flex justify-center items-center">
               <img src={cCard} alt="potstfast" />
             </div>
           </div>
@@ -85,6 +91,7 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
             <div className="w-[230px] mt-3">
               <Form.Input
                 label="Card Number"
+                labelBg={cardChecked ? 'bg-[#1660CF]/[.02]' : 'bg-white'}
                 type="number"
                 valid={isValid}
                 //@ts-ignore
@@ -96,18 +103,22 @@ export function PaymentMethodContainer(props: PaymentMethodContainerProps) {
             <div className="w-[250px] mt-3">
               <Form.Input
                 label="Expiration Date"
+                labelBg={cardChecked ? 'bg-[#1660CF]/[.02]' : 'bg-white'}
                 type="text"
                 //@ts-ignore
                 disabled={!cardChecked}
+                placeholder="MM/YY"
                 className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />
             </div>
             <div className="w-[230px] mt-3">
               <Form.Input
                 label="Card Security Code"
+                labelBg={cardChecked ? 'bg-[#1660CF]/[.02]' : 'bg-white'}
                 type="password"
                 //@ts-ignore
                 disabled={!cardChecked}
+                maxlength={3}
                 className={`border font-semibold border-borderColor-light h-[40px] text-sm rounded bg-transparent pl-4 py-1 pr-1 outline-none text-textBase`}
               />
             </div>

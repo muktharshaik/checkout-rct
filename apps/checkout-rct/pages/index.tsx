@@ -7,9 +7,11 @@ export function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <div className="mx-40 mt-20">
-      <Logo />
-      <Content />
+    <div className="flex justify-center items-center mx-40 mt-20">
+      <div className="w-[964px]">
+        <Logo />
+        <Content />
+      </div>
     </div>
   );
 }

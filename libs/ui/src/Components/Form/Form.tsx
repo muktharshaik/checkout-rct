@@ -13,6 +13,7 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   divWidth?: string;
   className?: any;
   register?: any;
+  labelBg?: any;
 }
 
 export interface TextAreaProps
@@ -33,6 +34,7 @@ const Input = ({
   valid,
   type,
   label,
+  labelBg,
   className,
   divWidth,
   ...rest
@@ -41,20 +43,31 @@ const Input = ({
     <div className={`relative ${divWidth ? divWidth : 'w-full'}`}>
       {label && (
         <label
-          className="absolute text-label -top-2 left-1 text-xs mx-2 px-2 bg-white"
+          className={`absolute text-label -top-2 left-1 text-xs mx-2 px-2 ${
+            labelBg ? labelBg : 'bg-white'
+          }`}
           htmlFor=""
         >
           {label}
         </label>
       )}
       {valid && (
-        <label className="absolute right-3 top-2 ">
-          <CheckRoundedIcon className="text-white rounded-full p-1 bg-primary font-bold text-[18px]" />
+        <label className="absolute right-3 top-4 ">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="7" cy="7" r="7" fill="#1660CF" />
+            <path d="M4 7.91638L6.08398 10L10 5" stroke="white" />
+          </svg>
         </label>
       )}
       <input
         type={type}
-        className={`w-full ${valid ? 'border-primary' : ''} ${className}`}
+        className={`-z-10 w-full ${valid ? 'border-primary' : ''} ${className}`}
         {...rest}
       />
     </div>
